@@ -143,7 +143,7 @@
                             <div class="col-xl-4 cl-lg-4 col-md-6" *ngFor="let it of list_item">
                                 <div class="product-wrapper text-center mb-45">
                                     <div class="product-img pos-rel">
-                                        <a href="product-details.html">
+                                        <a [routerLink]="['/chitiet',it.id_pro]">
                                             <img src="{{ it.image_pro }}" alt="">
                                            
                                         </a>

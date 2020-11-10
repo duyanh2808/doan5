@@ -10,12 +10,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ChitietComponent } from './chitiet/chitiet.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { QlyteComponent } from './qlyte/qlyte.component';
+import { LoaiComponent } from './loai/loai.component';
 
 
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: MainComponent,
    
   },
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path:'qlye',
     component: QlyteComponent,
+  },
+  {
+    path:'loai/:id',
+    component: LoaiComponent,
   }
 ];
 
@@ -36,7 +41,8 @@ const routes: Routes = [
     FooterComponent,
     MainComponent,
     ChitietComponent,
-    QlyteComponent
+    QlyteComponent,
+    LoaiComponent
   ],
   imports: [
     BrowserModule,

@@ -25,39 +25,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-6">
-                    <div class="shop-thumb-tab">
-                        <ul class="nav" id="myTab2" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                                    aria-selected="true"><img src="assets/img/products/pr-11.png" alt=""> </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                                    aria-selected="false"><img src="assets/img/products/pr-22.png" alt=""></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab2" data-toggle="tab" href="#profile1" role="tab"
-                                    aria-selected="false"><img src="assets/img/products/pr-33.png" alt=""></a>
-                            </li>
-                        </ul>
-                    </div>
+                   
                     <div class="product-details-img mb-30">
                         <div class="tab-content" id="myTabContent2">
                             <div class="tab-pane fade show active" id="home" role="tabpanel">
                                 <div class="product-large-img">
-                                    <img src="assets/img/products/pr-11.png" alt="">
+                                    <img src="{{ item.image_pro }}" alt="">
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel">
-                                <div class="product-large-img">
-                                    <img src="assets/img/products/pr-22.png" alt="">
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="profile1" role="tabpanel">
-                                <div class="product-large-img">
-                                    <img src="assets/img/products/pr-33.png" alt="">
-                                </div>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -65,7 +41,7 @@
                     <div class="product-details-wrapper mb-30">
                         <div class="product-text">
                             <h5>face mask</h5>
-                            <h4>Lab N98 Face Mask</h4>
+                            <h4>{{ item.name_pro }}</h4>
                             <div class="pro-rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -74,7 +50,7 @@
                                 <i class="fad fa-star-half-alt"></i>
                                 <span>(05 Reviews)</span>
                             </div>
-                            <span>$250.99</span>
+                            <span>{{ item.unit_price }}</span>
                         </div>
                         <div class="product-variant">
                             <div class="product-desc">

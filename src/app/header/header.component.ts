@@ -1,15 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
+import { BaseComponent } from './../lib/base-component';
+import { Observable } from 'rxjs';
+import 'rxjs/add/observable/combineLatest';
+import 'rxjs/add/operator/takeUntil';
+
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent extends BaseComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  menu: any;
+  constructor(injector: Injector) {
+    super(injector);
   }
 
+
+  ngOnInit(): void {
+    Observable.combineLatest(
+      this._api.get('/get-type-all'),
+    ).takeUntil(this.unsubscribe).subscribe(res => {
+      this.menu = res[0];
+      setTimeout(() => {
+        this.loadScripts();
+      });
+    }, err => { });
+  }
 }
+
